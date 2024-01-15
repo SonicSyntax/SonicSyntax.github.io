@@ -25,6 +25,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     height: 60px;
     width: 60px;
     background: #008080;
@@ -59,3 +60,18 @@ body{
     }
 }
 
+#topBar{
+    height: 20px;
+    border-radius: 0 0 25px 25px;
+    width: 60%;
+    background: wheat;
+    top: 0%;
+    position: absolute;
+}
+
+#fullScreen{
+    position: absolute;
+    background: #2f4555;
+    height: 100%;
+    width: 98%;
+}
