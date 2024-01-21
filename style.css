@@ -10,8 +10,9 @@ body{
 
 #loader{
     display: flex;
+    justify-content: center;
     align-items: end;
-    height: 150px;
+    height: 50px;
     width: 150px;
     background: transparent;
     gap: 2px;
