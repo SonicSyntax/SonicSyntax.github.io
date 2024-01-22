@@ -1,7 +1,9 @@
 let loader = document.getElementById("loader");
 const lines = 5;
 
-const colors = ["#ff6f61","#4a90e2"," #ffd700","#8e44ad","#00b894"];
+let loaded = false;
+
+const colors = ["#ff6f61","#4a90e2"," #ffd700","#8e44ad","#00b894","#3498db","#e74c3c"];
 
 window.addEventListener("load",function(){
     let lineWidth = (parseFloat(getComputedStyle(loader).width) / lines) + "px";
@@ -13,6 +15,7 @@ window.addEventListener("load",function(){
         line.style.height = "5px";
         line.style.width = lineWidth;
         line.style.transition = "0.5s";
+        line.style.position = "relative";
 
         if(i in colors){
             line.style.background = colors[i];
@@ -22,6 +25,23 @@ window.addEventListener("load",function(){
 
         loader.appendChild(line);
 
+    }
+
+    function loadAnimation(){
+        for(let i = 0;i < lines;i++){
+            let line = document.getElementById(`line${i}`);
+            loader.style.width = "100%";
+            setTimeout(function(){
+                line.style.height = lineWidth;
+                setTimeout(function(){
+                    loader.style.transition = "0.5s";
+                    loader.style.gap = "15px";
+                    setTimeout(function(){
+                        loader.style.gap = "5px";
+                    },500);
+                },800);
+            },100 * i);
+        }
     }
 
     function animate(){
@@ -36,7 +56,18 @@ window.addEventListener("load",function(){
         }
     }
 
-    this.setInterval(function(){
-        animate();
+    let animationInterval = this.setInterval(function(){
+        if(!loaded){
+            animate();
+        } else {
+            setTimeout(function(){
+                loadAnimation();
+                clearInterval(animationInterval);
+            },200);
+        }
     },650);
 })
+
+setTimeout(function(){
+    loaded = true;
+},5000);
