@@ -9,11 +9,15 @@ body{
 }
 
 #loader{
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: end;
     height: 50px;
-    width: 150px;
+    width: 250px;
     background: transparent;
+    transition: width 0.5s ease;
     gap: 2px;
 }
+
+
