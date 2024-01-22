@@ -35,7 +35,7 @@ window.addEventListener("load",function(){
                 line.style.height = lineWidth;
                 setTimeout(function(){
                     loader.style.transition = "0.5s";
-                    loader.style.gap = "15px";
+                    loader.style.gap = "10px";
                     setTimeout(function(){
                         loader.style.gap = "5px";
                     },500);
