@@ -3,6 +3,8 @@ const lines = 5;
 
 let loaded = false;
 
+let numbers = [];
+
 const colors = ["#ff6f61","#4a90e2"," #ffd700","#8e44ad","#00b894","#3498db","#e74c3c"];
 
 window.addEventListener("load",function(){
@@ -14,8 +16,11 @@ window.addEventListener("load",function(){
 
         line.style.height = "5px";
         line.style.width = lineWidth;
-        line.style.transition = "0.5s";
+        line.style.transition = "height 0.5s ease";
         line.style.position = "relative";
+        line.style.display = "flex";
+        line.style.justifyContent = "center";
+        line.style.alignItems = "center";
 
         if(i in colors){
             line.style.background = colors[i];
@@ -35,7 +40,7 @@ window.addEventListener("load",function(){
                 line.style.height = lineWidth;
                 setTimeout(function(){
                     loader.style.transition = "0.5s";
-                    loader.style.gap = "10px";
+                    loader.style.gap = "15px";
                     setTimeout(function(){
                         loader.style.gap = "5px";
                     },500);
