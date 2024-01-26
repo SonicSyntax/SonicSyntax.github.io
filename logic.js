@@ -15,6 +15,7 @@ window.addEventListener("load",function(){
         line.id = `line${i}`;
 
         line.style.height = "5px";
+        line.style.border = "0.3px solid rgba(0,0,0,0.3)";
         line.style.width = lineWidth;
         line.style.transition = "height 0.5s ease";
         line.style.position = "relative";
