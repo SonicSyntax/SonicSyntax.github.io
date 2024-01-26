@@ -19,3 +19,9 @@ body{
     transition: 1s;
     gap: 2px;
 }
+
+@media only screen and (max-width: 767px) {
+    #loader{
+        width: 150px;
+    }
+}
