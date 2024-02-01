@@ -1,79 +1,24 @@
-let loader = document.getElementById("loader");
-const lines = 5;
+const nextButton = document.getElementById("nextButton");
+const pageCountDisplay = document.getElementById("pageCount");
 
-let loaded = false;
+const maxPages = 10;
 
-let numbers = [];
-
-const colors = ["#ff6f61","#4a90e2"," #ffd700","#8e44ad","#00b894","#3498db","#e74c3c"];
-
-window.addEventListener("load",function(){
-    let lineWidth = (parseFloat(getComputedStyle(loader).width) / lines) + "px";
-
-    for(let i = 0;i < lines;i++){
-        let line = document.createElement("div");
-        line.id = `line${i}`;
-
-        line.style.height = "5px";
-        line.style.border = "0.3px solid rgba(0,0,0,0.3)";
-        line.style.width = lineWidth;
-        line.style.transition = "height 0.5s ease";
-        line.style.position = "relative";
-        line.style.display = "flex";
-        line.style.justifyContent = "center";
-        line.style.alignItems = "center";
-
-        if(i in colors){
-            line.style.background = colors[i];
-        } else{
-            line.style.background = "black";
-        }
-
-        loader.appendChild(line);
-
+window.addEventListener("load", function(){
+    let pageCountValue = this.localStorage.getItem("pageCount");
+    if(pageCountValue){
+        pageCountDisplay.innerHTML = pageCountValue;
+    } else{
+        pageCountDisplay.innerHTML = "1";
     }
-
-    function loadAnimation(){
-        for(let i = 0;i < lines;i++){
-            let line = document.getElementById(`line${i}`);
-            loader.style.width = "100%";
-            setTimeout(function(){
-                line.style.height = lineWidth;
-                setTimeout(function(){
-                    loader.style.transition = "0.5s";
-                    loader.style.gap = "15px";
-                    setTimeout(function(){
-                        loader.style.gap = "5px";
-                    },500);
-                },800);
-            },100 * i);
-        }
-    }
-
-    function animate(){
-        for(let i = 0;i < lines;i++){
-            setTimeout(function(){
-                let line = document.getElementById(`line${i}`);
-                line.style.height =  "5px";
-                setTimeout(function(){
-                    line.style.height = "50px";
-                },500);
-            },100 * i);
-        }
-    }
-
-    let animationInterval = this.setInterval(function(){
-        if(!loaded){
-            animate();
-        } else {
-            setTimeout(function(){
-                loadAnimation();
-                clearInterval(animationInterval);
-            },200);
-        }
-    },650);
 })
 
-setTimeout(function(){
-    loaded = true;
-},5000);
+nextButton.onclick = function(){
+    let page = parseInt(pageCountDisplay.innerHTML);
+    if(page < maxPages){
+        pageCountDisplay.innerHTML = ++page;
+        localStorage.setItem("pageCount",pageCountDisplay.innerHTML);
+    }else{
+        pageCountDisplay.innerHTML = "0";
+        localStorage.setItem("pageCount",pageCountDisplay.innerHTML);
+    }
+}
