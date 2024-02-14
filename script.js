@@ -15,7 +15,17 @@ for(let i=-1;i<maxPages;i++){
     newPage.style.transition = "0.5s";
     newPage.style.border = "5px solid forestgreen";
     newPage.style.zIndex = "-1";
+    newPage.style.overflow = "hidden";
+    newPage.style.display = "flex";
+    newPage.style.justifyContent = "center";
+    newPage.style.alignItems = "center";
     newPage.textContent = `Page${i}`;
+
+    let backgroundImage = document.createElement("img");
+    backgroundImage.src = `image${i}.png`;
+    backgroundImage.style.width = "108%";
+    backgroundImage.style.position = "absolute";
+    newPage.appendChild(backgroundImage);
 
     board.appendChild(newPage);
 }
