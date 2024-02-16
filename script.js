@@ -32,6 +32,8 @@ for(let i=-1;i<maxPages;i++){
 
 window.addEventListener("load", function(){
     let pageCountValue = this.localStorage.getItem("pageCount");
+    let pageElement = this.document.getElementById(`page${pageCountValue}`);
+    pageElement.style.zIndex = "0";
     if(pageCountValue){
         pageCountDisplay.innerHTML = pageCountValue;
     } else{
@@ -76,3 +78,8 @@ nextButton.onclick = function(){
     
 }
     
+const button1 = document.getElementById("window1");
+
+button1.onclick = function(){
+    window.open("index2.html");
+}
