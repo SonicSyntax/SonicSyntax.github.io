@@ -1,85 +1,38 @@
-const nextButton = document.getElementById("nextButton");
-const pageCountDisplay = document.getElementById("pageCount");
-const board = document.getElementById("Background");
+const container = document.getElementById("container");
+const lines = 5;
+let heights = [];
+let colors = ["#87CEEB","#98FF98","#E6E6FA","#7FFFD4","#CCCCFF"];
 
-const maxPages = 10;
-
-for(let i=-1;i<maxPages;i++){
-    let newPage = document.createElement("div");
-    newPage.id = `page${i}`;
-    newPage.style.background = "#66CCCC";
-    newPage.style.position = "absolute";
-    newPage.style.width = "98%";
-    newPage.style.borderRadius = "5px";
-    newPage.style.height = "98%";
-    newPage.style.transition = "0.5s";
-    newPage.style.border = "5px solid forestgreen";
-    newPage.style.zIndex = "-1";
-    newPage.style.overflow = "hidden";
-    newPage.style.display = "flex";
-    newPage.style.justifyContent = "center";
-    newPage.style.alignItems = "center";
-    newPage.textContent = `Page${i}`;
-
-    let backgroundImage = document.createElement("img");
-    backgroundImage.src = `image${i}.png`;
-    backgroundImage.style.width = "108%";
-    backgroundImage.style.position = "absolute";
-    newPage.appendChild(backgroundImage);
-
-    board.appendChild(newPage);
+for(let i = 50;i < lines;i++){
+    heights.push(i + "px");
 }
 
-window.addEventListener("load", function(){
-    let pageCountValue = this.localStorage.getItem("pageCount");
-    let pageElement = this.document.getElementById(`page${pageCountValue}`);
-    pageElement.style.zIndex = "0";
-    if(pageCountValue){
-        pageCountDisplay.innerHTML = pageCountValue;
-    } else{
-        pageCountDisplay.innerHTML = "1";
-    }
-})
+for(let i = 0;i < lines;i++){
+    let lineWidth = parseFloat(getComputedStyle(container).width) / lines + "px";
+    let lineHeight = parseFloat(getComputedStyle(container).height) / 2 + "px";
+    const lineStyle = {
+        width: lineWidth,
+        height: lineHeight,
+        background: colors[i],
+        transition: "0.5s",
+        border: "1px solid rgba(0,0,0,0.1)",
+    };
+    const line = document.createElement("div");
+    line.id = `line${i}`;
+    container.appendChild(line);
+    Object.assign(line.style,lineStyle);
+}
 
-nextButton.onclick = function(){
-    let page = parseInt(pageCountDisplay.innerHTML);
-    if(page < maxPages){
-        pageCountDisplay.innerHTML = ++page;
-        localStorage.setItem("pageCount",pageCountDisplay.innerHTML);
-    }else{
-        pageCountDisplay.innerHTML = "0";
-        localStorage.setItem("pageCount",pageCountDisplay.innerHTML);
-    }
-
-    if(page == 9){
-        let puslapis = document.getElementById("page9");
-        puslapis.style.background = "transparent";
-        puslapis.style.border = "none";
-        puslapis.textContent = "";
-    }
-
-    let puslapis = document.getElementById(`page${parseInt(page)}`);
-    let praeitasPuslapis = document.getElementById(`page${parseInt(page - 1)}`);
-    puslapis.style.transform = "translate(420px,0px)";
-    setTimeout(function(){
-        praeitasPuslapis.style.background = "#66CCCC";
-        praeitasPuslapis.style.transform = "translate(-420px,0px)"
+function Animate(){
+    for(let i=0;i<lines;i++){
+        let line = document.getElementById(`line${i}`);
+        let currentHeight = parseFloat(getComputedStyle(line).height);
         setTimeout(function(){
-            praeitasPuslapis.style.zIndex = "-1";
-            praeitasPuslapis.style.transform = "translate(0px,0px)"
-        },500)
-    },300);
-    setTimeout(function(){
-        puslapis.style.zIndex = "0";
-        setTimeout(function(){
-            puslapis.style.transform = "translate(0,0)";
-        })
-    },500)
-    
+            line.style.height = "25px";
+            setTimeout(function(){
+                line.style.height = "70px";
+            },450);
+        },i * 100);
+    }
 }
-    
-const button1 = document.getElementById("window1");
-
-button1.onclick = function(){
-    window.open("index2.html");
-}
+setInterval(Animate,880);
