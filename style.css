@@ -7,78 +7,12 @@ body{
     min-height: 100vh;
 }
 
-#containter{
+#container{
+    height: 150px;
+    width: 150px;
+    background: transparent;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background:  #32CD32;
-    height: 280px;
-    width: 400px;
-    border-radius: 5px;
-    border: 2px solid #00be00;
-    box-shadow: 0px 5px 0 #00be00;
-}
-
-#nextButton{
-    color: white;
-    font-size: 3em;
-    position: relative;
-    top: 40%;
-    height: 75px;
-    width: 75px;
-    left: 30%;
-    background: #28ec28;
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    box-shadow: 0px 5px 0 #00be00;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    left: 35%;
-}
-
-#nextButton:active{
-    transform: translate(0px,5px);
-    box-shadow: 0px 0px 0 #00be00;
-}
-
-#Background{
-    position: absolute;
-    height: 270px;
-    width: 390px;
-    background: #41da41;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#pageCount{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 2em;
-    position: relative;
-    width: 50px;
-    height: 50px;
-    background-color: rgb(0, 255, 0);
-    right: 48%;
-    top: 35%;
-    border-radius: 10%;
-}
-
-#page1,#page2,#page3,#page4,#page5,#page6,#page7,#page8{
-    background: #66CCCC;
-    width: 98%;
-    height: 98%;
-    border-radius: 5px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: bolder;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3em;
-    color: #09cc09;
+    flex-direction: row;
+    align-items: end;
+    gap: 2px;
 }
