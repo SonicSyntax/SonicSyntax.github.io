@@ -55,6 +55,13 @@ main #container {
     width: 100%;
     background-color: white;
     overflow-y: scroll;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+main #container::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; 
 }
 
 #container .section {
@@ -107,5 +114,38 @@ input.changeable{
     margin-left: 3px;
     border: none;
     font-weight: bolder;
+    cursor: pointer;
 }
 
+.center{
+    margin: auto 0;
+}
+
+.calculate-btn{
+    position: relative;
+    border: none;
+    bottom:3px;
+    box-shadow: 0 5px rgb(5, 70, 5);
+}
+
+.calculate-btn:hover{
+    transform:translate(0,1px);
+    box-shadow: 0 4px rgb(5,70,5);
+}
+
+.answer{
+    background: greenyellow;
+    color: green;
+    padding: 0 5px;
+}
+
+@media (max-width:767px){
+    main{
+        width: 100%;
+        padding: 0;
+    }
+
+    main nav{
+        display: none;
+    }
+}
