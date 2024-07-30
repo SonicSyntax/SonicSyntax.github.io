@@ -1,18 +1,111 @@
-body{
+body {
+    background: rgba(0,0,0,0);
     margin: 0;
     padding: 0;
+    font-family: Roboto;
+}
+
+main {
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    padding-right: 250px;
+    box-sizing: border-box;
+}
+
+main nav {
+    padding-top: 150px;
+    position: relative;
+    height: 100%;
+    width: 200px;
+    top: 0;
+    left: 0;
+    background: white;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+main nav li{
+    background: white;
+    height: 30px;
+    width: 100%;
+    display: block;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    cursor: pointer;
 }
 
-#container{
-    height: 150px;
-    width: 150px;
-    background: transparent;
-    display: flex;
-    flex-direction: row;
-    align-items: end;
-    gap: 2px;
+main nav li:first-of-type{
+    background: wheat;
 }
+
+nav li:hover{
+    transition: 0.5s;
+    background-color: white;
+}
+
+main #container {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+#container .section {
+    height: 100vh;
+    width: 100%;
+    background: transparent;
+    box-sizing: border-box;
+    padding-top: 30px;
+    padding-right: 20px;
+    padding-left: 10px;
+}
+
+.section h1{
+    font-size: 50px;
+    margin-left: 35px;
+    margin-bottom: 0;
+}
+
+p{
+    margin-left: 10px;
+    font-size: 1.5em;
+}
+
+.info{
+    background-color: rgb(212, 208, 203);
+    padding: 2px;
+}
+
+.highlight{
+    background-color: var(--clr);
+    color:var(--textclr);
+    padding: 0px 5px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.icon{
+    display: inline-block;
+    position: relative;
+    top: 2px;
+}
+
+input.changeable{
+    position: relative;
+    width: var(--width);
+    bottom: 3px;
+    text-align: center;
+    margin-left: 3px;
+    border: none;
+    font-weight: bolder;
+}
+
