@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
-    <div id="container"></div>
-    <script src="script.js"></script>
+  <main>
+    <nav>
+      <li>Pradžia</li>
+    </nav>
+    <div id="container">
+      <section class="section">
+        <h1>Kintamieji</h1>
+        <p><span class="info"><strong>Kintamasis</strong> yra simbolis,įprastai raidė naudojama žymėti nežinomą kiekį.<strong>x,y and z</strong> yra dažniausiai naudojami Algebroje</span> <a href="https://www.splashlearn.com/math-vocabulary/algebra/variable">Kas yra kintamasis?<ion-icon class="icon" name="search-circle-outline"></ion-icon></a></p>
+        <p>Įsivaizduokite žmogų named dirbantį automobilių plovykloje ir uždirbantį <span style="--clr:blue;--textclr:white" class="highlight">50$</span> per dieną <span style="--clr:blue;--textclr:white" class="highlight">plius kažkiek arbatpinigių.</span>Tuos arbatpinigius galime išreikšti kintamuoju <span style="--clr:green;--textclr:white" class="highlight">x</span> ir sakyti ,kad to žmogaus visa uždirbta suma per dieną yra lygi <span style="--clr:red;--textclr:white" class="highlight">50$ + x</span>.Jei kintamasis yra lygus <span style="--clr:green;--textclr:white" class="highlight">x=10$</span> tai visa pinigų suma yra lygi <span style="--clr:red;--textclr:white" class="highlight">50$ +10$</span></p>
+        <h2>Turėtumėte žinoti</h2>
+        <ul>
+          <li>
+            <p>Štai pavizdys: Vienas obuolys kainuoja <span class="highlight" style="--clr:blue;--textclr:white">nežinomą sumą</span>.Jonas norėtų nusipirkti tris obuolius.Šioje situacijoje pilna kaina yra lygi <span style="--clr:red;--textclr:white" class="highlight">3*y</span> arba tiesiog <span style="--clr:red;--textclr:white" class="highlight">3y</span>.
+              <span style="--clr:green;--textclr:white" class="highlight">y</span> reiškia nežinoma vieną obuolio kainą.Jeigu <span style="--clr:green;--textclr:white" class="highlight">y=2$</span> tai 3 obuolių kaina yra lygi <span style="--clr:purple;--textclr:white" class="highlight">3*2$=6$</span>.</p>
+          </li>
+          <li>
+            <p><span class="info">Terminas yra vienas skaičius,pavyzdžiui 7,kintamasis,arba skaičius padaugintas iš vieno ar daugiau kintamųjų. (4x,9y,24xyz,-3a,6,2x²y²z²).</span></p>
+          </li>
+          <li>
+            <p><span id="term1" style="--clr:red;--textclr:white" class="highlight">2x+120</span> <span style="--clr:green;--textclr:white" class="highlight">x=<input class="changeable" value=3 style="width:20px;--target:term1;" type="text"></span></p>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <script src="app.js"></script>
 </body>
 </html>
