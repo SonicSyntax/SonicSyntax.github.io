@@ -8,7 +8,7 @@ main{
     position: relative;
     height: 100vh;
     width: 100%;
-    background: whitesmoke;
+    background: #fff;
     box-sizing: border-box;
     padding-top: 100px;
     padding-bottom: 20px;
@@ -61,7 +61,7 @@ main .container nav button:hover{
 }
 
 main .container .section-container{
-    background: whitesmoke;
+    background: #fff;
     width: 100%;
     height: 100%;
     overflow-y: scroll;
