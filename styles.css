@@ -1,160 +1,164 @@
-body {
-    background: rgba(0,0,0,0);
-    margin: 0;
-    padding: 0;
-    font-family: Roboto;
-    scroll-behavior: smooth;
+body{
+    margin:0;
+    padding:0;
+    font-family: tahoma;
 }
 
-html{
-    scroll-behavior: smooth;
-}
-
-main {
-    width: 80%;
+main{
+    position: relative;
     height: 100vh;
-    margin: 0 auto;
+    width: 100%;
+    background: whitesmoke;
+    box-sizing: border-box;
+    padding-top: 100px;
+    padding-bottom: 20px;
+}
+
+main .container{
+    width:100%;
+    height: 100%;
+    background:none;
+    box-sizing: border-box;
+    padding-left: 200px;
+    padding-right: 400px;
     display: flex;
     flex-direction: row;
-    gap: 5px;
-    padding-right: 250px;
-    box-sizing: border-box;
+    transition: 0.5s;
 }
 
-main nav {
-    padding-top: 150px;
-    position: relative;
+main .container nav{
     height: 100%;
-    width: 200px;
-    top: 0;
-    left: 0;
-    background: white;
+    width: 250px;
+    background: rgba(0,0,0,0.05);
+    position: relative;
+    transition: 0.2s;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap:5px;
+    padding-top: 100px;
 }
 
-main nav li{
-    background: white;
+main .container nav button{
+    display: block;
+    background: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 30px;
     width: 100%;
-    display: block;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-main nav li:first-of-type{
-    background: wheat;
-}
-
-nav li:hover{
-    transition: 0.5s;
-    background-color: white;
-}
-
-main #container {
-    height: 100%;
-    width: 100%;
-    background-color: white;
-    overflow-y: scroll;
-    scrollbar-width: none; 
-    -ms-overflow-style: none;
-}
-
-main #container::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; 
-}
-
-#container .section {
-    height: 100vh;
-    width: 100%;
-    background: transparent;
-    box-sizing: border-box;
-    padding-top: 30px;
-    padding-right: 20px;
-    padding-left: 10px;
-}
-
-.section h1{
-    font-size: 50px;
-    margin-left: 35px;
-    margin-bottom: 0;
-}
-
-p{
-    margin-left: 10px;
     font-size: 1.5em;
+    border: none;
+    transition: 0.2s;
+    background: rgba(0,0,0,0.05);
 }
 
-.info{
-    background-color: rgb(212, 208, 203);
-    padding: 2px;
-}
-
-.highlight{
-    background-color: var(--clr);
-    color:var(--textclr);
-    padding: 0px 5px;
-}
-
-a{
+button a{
     text-decoration: none;
+    color:rgb(83, 83, 83);;
+}
+
+main .container nav button:hover{
+    background: rgba(0,0,0,0.08);
+}
+
+main .container .section-container{
+    background: whitesmoke;
+    width: 100%;
+    height: 100%;
+    padding-right: 50px;
+    overflow-y: scroll;
+}
+
+main .container .section-container .section{
+    background-color: none;
+    box-sizing: border-box;
+    padding-top: 20px;
+}
+
+main .container .section-container .section header{
+    font-size: 3em;
+    font-family: Roboto;
+    font-weight: 800;
+    text-align: left;
+    padding-left: 50px;
+    margin-bottom: 25px;
+}
+
+.section h3{
+    margin-left: 40px;
+    font-weight:700;
+}
+
+main .container .section-container .section span{
+    margin-left: 40px;
+    font-family: Roboto;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 50px;
+    display: block;
+    margin-bottom: 30px;
+}
+
+#title{
+    margin:0 auto;
+    text-align: center;
+    font-family: Tahoma;
+    font-size: 3em;
+    font-weight: 800;
+    color: rgb(0,0,0);
+}
+
+hr{
+    margin: 0;
 }
 
 .icon{
-    display: inline-block;
-    position: relative;
-    top: 2px;
+    font-size: 0.6em;
+    color: black;
+    margin-right: 5px;
 }
 
-input.changeable{
-    position: relative;
-    width: var(--width);
-    bottom: 3px;
-    text-align: center;
-    margin-left: 3px;
-    border: none;
-    font-weight: bolder;
-    cursor: pointer;
+.highlight{
+    background: var(--clr);
 }
 
-.center{
-    margin: auto 0;
+@media (max-width:1800px) and (min-width:1550px){
+    main .container{
+        padding-left: 100px;
+    }
 }
 
-.calculate-btn{
-    position: relative;
-    border: none;
-    bottom:3px;
-    box-shadow: 0 5px rgb(5, 70, 5);
+@media (max-width:1549px){
+    main .container{
+        padding-left: 50px;
+    }
 }
 
-.calculate-btn:hover{
-    transform:translate(0,1px);
-    box-shadow: 0 4px rgb(5,70,5);
+@media (max-width:1500px){
+    main .container{
+        padding-left: 0;
+    }
 }
 
-.answer{
-    background: greenyellow;
-    color: green;
-    padding: 0 5px;
+@media (max-width: 1500px){
+    main .container{
+        padding-right: 400px;
+    }
+}
+
+@media (max-width: 1400px){
+    main .container{
+        padding-right: 300px;
+    }
+}
+
+@media (max-width:1180px){
+    main .container{
+        padding-right: 0;
+    }
 }
 
 @media (max-width:767px){
-    main{
-        width: 100%;
-        padding: 0;
+    nav{
+        display:none;
     }
-
-    main nav{
-        display: none;
-    }
-}
-
-a{
-    color: black;
 }
