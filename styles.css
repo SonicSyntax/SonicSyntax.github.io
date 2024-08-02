@@ -1,7 +1,7 @@
 body{
     margin:0;
     padding:0;
-    font-family: tahoma;
+    font-family: 'Roboto';
 }
 
 main{
@@ -29,7 +29,7 @@ main .container{
 main .container nav{
     height: 100%;
     width: 250px;
-    background: rgba(0,0,0,0.05);
+    background: none;
     position: relative;
     transition: 0.2s;
     box-sizing: border-box;
@@ -64,36 +64,36 @@ main .container .section-container{
     background: whitesmoke;
     width: 100%;
     height: 100%;
-    padding-right: 50px;
     overflow-y: scroll;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
+}
+
+.section-container::-webkit-scrollbar{
+    display: none;
 }
 
 main .container .section-container .section{
     background-color: none;
     box-sizing: border-box;
     padding-top: 20px;
+    padding-right: 80px;
+    padding-left: 80px;
 }
 
 main .container .section-container .section header{
     font-size: 3em;
-    font-family: Roboto;
     font-weight: 800;
     text-align: left;
-    padding-left: 50px;
     margin-bottom: 25px;
 }
 
 .section h3{
-    margin-left: 40px;
     font-weight:700;
 }
 
 main .container .section-container .section span{
-    margin-left: 40px;
-    font-family: Roboto;
     font-size: 20px;
-    padding-left: 20px;
-    padding-right: 50px;
     display: block;
     margin-bottom: 30px;
 }
@@ -101,7 +101,6 @@ main .container .section-container .section span{
 #title{
     margin:0 auto;
     text-align: center;
-    font-family: Tahoma;
     font-size: 3em;
     font-weight: 800;
     color: rgb(0,0,0);
@@ -119,6 +118,8 @@ hr{
 
 .highlight{
     background: var(--clr);
+    box-sizing: border-box;
+    padding-left: 5px;
 }
 
 @media (max-width:1800px) and (min-width:1550px){
@@ -135,7 +136,7 @@ hr{
 
 @media (max-width:1500px){
     main .container{
-        padding-left: 0;
+        padding-left: 25px;
     }
 }
 
@@ -158,6 +159,15 @@ hr{
 }
 
 @media (max-width:767px){
+    main .container{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .section{
+        padding-left: 5px;
+        padding-right: 5px;
+        margin: none;
+    }
     nav{
         display:none;
     }
