@@ -94,8 +94,7 @@ main .container .section-container .section header{
 
 main .container .section-container .section span{
     font-size: 20px;
-    display: block;
-    margin-bottom: 30px;
+    display: inline-block;
 }
 
 #title{
@@ -120,6 +119,7 @@ hr{
     background: var(--clr);
     box-sizing: border-box;
     padding-left: 5px;
+    padding-right: 5px;
 }
 
 @media (max-width:1800px) and (min-width:1550px){
@@ -163,10 +163,17 @@ hr{
         padding-left: 0;
         padding-right: 0;
     }
+
+    .section-container{
+        background: red;
+        margin: 0;
+        padding: 0;
+    }
+
     .section{
         padding-left: 5px;
         padding-right: 5px;
-        margin: none;
+        margin: 0;
     }
     nav{
         display:none;
