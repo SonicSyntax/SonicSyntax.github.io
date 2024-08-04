@@ -79,6 +79,7 @@ main .container .section-container .section{
     padding-top: 20px;
     padding-right: 80px;
     padding-left: 80px;
+    padding-bottom: 20px  ;
 }
 
 main .container .section-container .section header{
