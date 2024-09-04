@@ -36,7 +36,7 @@ main .container nav{
     padding-top: 100px;
 }
 
-main .container nav button{
+main .container nav #navbutton{
     display: block;
     background: none;
     list-style: none;
@@ -51,12 +51,24 @@ main .container nav button{
     background: rgba(0,0,0,0.05);
 }
 
+span .highlightText{
+    font-weight: 900;
+    color: var(--clr);
+}
+
+.dropdown ,.button{
+    background: rgba(137, 130, 206,0.5);
+    border: none;
+    margin-bottom: 2px;
+    width: 100%;
+}
+
 button a{
     text-decoration: none;
     color:rgb(83, 83, 83);;
 }
 
-main .container nav button:hover{
+main .container nav #navbutton:hover{
     background: rgba(0,0,0,0.08);
 }
 
