@@ -20,7 +20,7 @@ main .container{
     background:none;
     box-sizing: border-box;
     padding-left: 200px;
-    padding-right: 400px;
+    padding-right: 0;
     display: flex;
     flex-direction: row;
     transition: 0.5s;
@@ -134,11 +134,22 @@ hr{
     box-sizing: border-box;
     padding-left: 5px;
     padding-right: 5px;
+    margin-bottom: 100px;
+}
+
+#sidebar{
+    height: 100%;
+    width: 450px;
+    background: rgba(0,0,0,0.1);
+    margin-right: 200px;
 }
 
 @media (max-width:1800px) and (min-width:1550px){
     main .container{
         padding-left: 100px;
+    }
+    #sidebar{
+        margin-right: 150px;
     }
 }
 
@@ -146,44 +157,32 @@ hr{
     main .container{
         padding-left: 50px;
     }
+    #sidebar{
+        margin-right: 50px;
+    }
 }
 
 @media (max-width:1500px){
-    main .container{
-        padding-left: 25px;
+    #sidebar{
+        margin-right: 40px;
+        padding: 0;
     }
 }
 
 @media (max-width: 1500px){
-    main .container{
-        padding-right: 400px;
-    }
-}
-
-@media (max-width: 1400px){
-    main .container{
-        padding-right: 300px;
+    #sidebar{
+        display: none;
     }
 }
 
 @media (max-width:1180px){
     main .container{
         padding-right: 0;
+        margin: 0;
     }
 }
 
 @media (max-width:767px){
-    main .container{
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .section-container{
-        background: red;
-        margin: 0;
-        padding: 0;
-    }
-
     .section{
         padding-left: 5px;
         padding-right: 5px;
