@@ -4,6 +4,10 @@ body{
     font-family: 'Roboto';
 }
 
+* {
+    scroll-behavior: smooth;
+}
+
 main{
     position: relative;
     height: 100vh;
@@ -140,10 +144,11 @@ hr{
 #sidebar{
     height: 100%;
     width: 450px;
-    background: rgba(0,0,0,0.1);
+    background: rgba(0,0,0,0.05);
     margin-right: 200px;
     box-sizing: border-box;
     padding-top: 10px;
+    transition: 0.2s;
 }
 
 #sidebar header{
