@@ -1,14 +1,21 @@
-const buttonIds = ["btn1"];
-buttonIds.forEach(btn => {
-    const button = document.getElementById(`${btn}`);
-    button.onmousedown =()=>{
-        const targetInput = document.getElementById(getComputedStyle(button).getPropertyValue("--target"));
-        const termTarget = document.getElementById(getComputedStyle(targetInput).getPropertyValue("--target"));
-        const answerTarget = document.getElementById(getComputedStyle(termTarget).getPropertyValue("--answerTarget"));
-        const string = termTarget.innerText;
-        answerTarget.innerText = (string.replace("x",`(${targetInput.value})`));
-        const finalAnswerElement = document.getElementById(getComputedStyle(button).getPropertyValue("--answerTarget"));
-        const result = eval((string.replace("x",`(${targetInput.value})`)).replace(/(\d+)\s*\(/g, '$1*('));
-        finalAnswerElement.innerText = result;
+const sidebar = document.getElementById("sidebar");
+
+const userData={
+    currentSection:null,
+    description: null,
+};
+
+const updateUserData=(sectionId,description)=>{
+    userData.currentSection=sectionId;
+    userData.description=description;
+}
+
+const btn1 = document.querySelector('.button1');
+btn1.addEventListener("click",()=>{
+    updateUserData("Kintamieji",["Pavizdys #1","Pavizdys #2","Išraiškos"]);
+    sidebar.innerHTML = "<header>Šioje skiltyje</header>";
+    for(obj of userData.description){
+        const HTML= `<span style="display:block;text-align:center;margin-top:5px;border-left:5px solid gray;background:rgba(255,165,0,0.5);font-weight:800"><a href="#${obj}" style="text-decoration:none;color:black;" href="#">${obj}</a></span>`;
+        sidebar.innerHTML+=HTML;
     }
-});
+})
