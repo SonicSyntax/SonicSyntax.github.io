@@ -142,6 +142,15 @@ hr{
     width: 450px;
     background: rgba(0,0,0,0.1);
     margin-right: 200px;
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+#sidebar header{
+    text-align: center;
+    font-weight: bolder;
+    background:rgba(0,0,0,0.1);
+    font-size:20px;
 }
 
 @media (max-width:1800px) and (min-width:1550px){
