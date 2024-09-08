@@ -1,46 +1,39 @@
-body{
-    margin:0;
-    padding:0;
-    font-family: 'Roboto';
-}
-
-* {
+*{
     scroll-behavior: smooth;
 }
 
-main{
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    background: #fff;
-    box-sizing: border-box;
-    padding-top: 100px;
-    padding-bottom: 100px;
-}
-
-main .container{
-    width:100%;
-    height: 100%;
-    background:none;
-    box-sizing: border-box;
-    padding-left: 200px;
-    padding-right: 0;
+body{
     display: flex;
     flex-direction: row;
-    transition: 0.5s;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
 }
 
-main .container nav{
-    height: 100%;
-    width: 250px;
+nav{
+    height: 100vh;
+    width: 200px;
     background: none;
-    position: relative;
-    transition: 0.2s;
+    margin-left: 200px;
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
-    padding-top: 100px;
+    padding-top: 200px;
+    align-items: center;
+    background: none;
+    width: 250px;
+    margin-right: 100px;
+    transition: 0.2s;
 }
 
-main .container nav #navbutton{
+nav .title{
+    background: rgba(137, 130, 206,0.5);
+    border: none;
+    margin-bottom: 2px;
+    width: 100%;
+}
+
+#navbutton{
     display: block;
     background: none;
     list-style: none;
@@ -55,82 +48,39 @@ main .container nav #navbutton{
     background: rgba(0,0,0,0.05);
 }
 
-span .highlightText{
-    font-weight: 900;
-    color: var(--clr);
-}
-
-.dropdown ,.button{
-    background: rgba(137, 130, 206,0.5);
-    border: none;
-    margin-bottom: 2px;
-    width: 100%;
-}
-
 button a{
     text-decoration: none;
     color:rgb(83, 83, 83);;
 }
 
-main .container nav #navbutton:hover{
-    background: rgba(0,0,0,0.08);
-}
-
-main .container .section-container{
-    background: #fff;
+#section-container{
+    height: 100vh;
     width: 100%;
-    height: 100%;
-    overflow-y: scroll;
-    -ms-overflow-style: none;  
-    scrollbar-width: none;
-}
-
-.section-container::-webkit-scrollbar{
-    display: none;
-}
-
-main .container .section-container .section{
-    background-color: none;
+    background: none;
     box-sizing: border-box;
-    padding-top: 20px;
-    padding-right: 80px;
-    padding-left: 80px;
-    padding-bottom: 20px  ;
+    padding-top: 120px;
 }
 
-main .container .section-container .section header{
-    font-size: 3em;
+#sidebar{
+    height: 100vh;
+    width: 450px;
+    background: rgba(0,0,0,0);
+    margin-right: 200px;
+    box-sizing: border-box;
+    padding-top: 120px;
+    transition: 0.2s;
+}
+
+.section header{
     font-weight: 800;
-    text-align: left;
     margin-bottom: 25px;
+    font-size: 3em;
 }
 
-.section h3{
-    font-weight:700;
-}
-
-main .container .section-container .section span{
+.section span{
     font-size: 20px;
     display: inline-block;
     margin-bottom: 2px;
-}
-
-#title{
-    margin:0 auto;
-    text-align: center;
-    font-size: 3em;
-    font-weight: 800;
-    color: rgb(0,0,0);
-}
-
-hr{
-    margin: 0;
-}
-
-.icon{
-    font-size: 0.6em;
-    color: black;
-    margin-right: 5px;
 }
 
 .highlight{
@@ -138,61 +88,72 @@ hr{
     box-sizing: border-box;
     padding-left: 5px;
     padding-right: 5px;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
 }
 
-#sidebar{
-    height: 100%;
-    width: 450px;
-    background: rgba(0,0,0,0.05);
-    margin-right: 200px;
+.section{
     box-sizing: border-box;
-    padding-top: 10px;
-    transition: 0.2s;
+    padding-right: 120px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-#sidebar header{
-    text-align: center;
-    font-weight: bolder;
-    background:rgba(0,0,0,0.1);
-    font-size:20px;
+
+.section::-webkit-scrollbar {
+    display: none;
+}
+
+.container{
+    margin-top: 5px;
+}
+
+span .highlightText{
+    font-weight: 900;
+    color: var(--clr);
 }
 
 @media (max-width:1800px) and (min-width:1550px){
-    main .container{
-        padding-left: 100px;
-    }
     #sidebar{
-        margin-right: 150px;
+        margin-right: 100px;
+    }
+
+    nav{
+        margin-left: 100px;
+    }
+
+    .section{
+        padding-right: 40px;
     }
 }
 
 @media (max-width:1549px){
-    main .container{
-        padding-left: 50px;
+    nav{
+        margin-left: 50px;
     }
-    #sidebar{
-        margin-right: 50px;
-    }
-}
 
-@media (max-width:1500px){
+    .section{
+        padding-right: 20px;
+    }
+
     #sidebar{
         margin-right: 40px;
-        padding: 0;
     }
 }
 
-@media (max-width: 1500px){
+@media (max-width: 1400px){
     #sidebar{
         display: none;
+    }
+
+    .section{
+        padding-right: 80px;
     }
 }
 
 @media (max-width:1180px){
-    main .container{
-        padding-right: 0;
-        margin: 0;
+    nav{
+        margin-right: 50px;
     }
 }
 
@@ -201,13 +162,8 @@ hr{
         display: none;
     }
 
-    main{
-        margin: 0;
-        padding: 0;
-    }
-
-    main .container{
-        padding: 0;
-        margin: 0;
+    .section{
+        padding-left: 40px;
+        padding-right: 40px;
     }
 }
