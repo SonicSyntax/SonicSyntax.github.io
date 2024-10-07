@@ -113,7 +113,7 @@ class Particle {
                 rectMode(CENTER);
                 fill(0, 255 - record/1.2, 0);
                 noStroke();
-                rect(width / this.rays.length * index, height / 2, width / this.rays.length, 8000 / record);
+                rect(width / this.rays.length * index, height / 2, width / this.rays.length, 14000 / record);
             }
         }
     }
